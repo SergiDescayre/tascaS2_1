@@ -99,42 +99,195 @@ const processar = (nombre, callback) => {
 
 const calculadora = (a, b, callback) => callback(a + b)
 
-calculadora(2, 9, (result) => console.log(result))
+//calculadora(2, 9, (result) => console.log(result))
 
 //Exercici 3
 
 const esperarISaludar = (nom, callback) => {
     setTimeout(() => {
-        callback(nom)
+        callback(`Hola ${nom}`)
     }, 2000)
 }
-
-esperarISaludar("Sergi", (nom) => console.log(`Hola ${nom}`))
+//esperarISaludar("Sergi", (saludo) => console.log(saludo))
 
 //Exercici 4
-const numbersEx4 = [1,2,3]
+const numbersEx4 = [1, 2, 3]
 
-const processarElements = (array , callback) => {
+const pintarCallbacks = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        console.log(`invoco callback ${array[i]}`)
+    }
+}
+
+const processarElements = (array, callback) => {
     callback(array)
 }
 
-processarElements(numbersEx4, (array) => {
-    for(let i = 0 ; i < array.length ; i++){
-        console.log(`invoco callback ${array[i]}`)
-    }
-})
+//processarElements(numbersEx4, pintarCallbacks )
 
 //Exercici 5
 
 const passarMayuscula = (cadena) => {
-    console.log (cadena.toUpperCase())
+    console.log(cadena.toUpperCase())
 }
 
-const processarCadena = (cadena , callback) => callback(cadena)
+const processarCadena = (cadena, callback) => callback(cadena)
 
-processarCadena("sergi", passarMayuscula)
-   
+//processarCadena("sergi", passarMayuscula)
 
+//EXERCICI 1.4
 
+//Exercici 1
 
+const array1 = [1, 2, 3]
+const array2 = [4, 5, 6]
 
+const array3 = [...array1, ...array2]
+
+//console.log(array3)
+
+//Exercici 2
+
+const suma = (...numeros) => {
+    const resultado = numeros.reduce((a, b) => a + b, 0)
+    console.log(resultado)
+}
+
+//suma(...array1, ...array2, 1, 2, 3, 4, 5, 6)
+
+//Exercici 3
+
+objecte1 = {
+    nom: "Sergi",
+    cognom: "Descayre"
+}
+
+objecte2 = {
+    adreca: "gardenia 55",
+    poblacio: "llagostera"
+}
+
+objecte3 = {
+    ...objecte1,
+    ...objecte2,
+    poblacio: "Llagos"
+}
+
+//console.log(objecte3)
+//console.log(objecte2)
+
+//Exercici4
+
+const numerosEx4 = [1, 2, 3, 4, 5, 6, 4]
+
+const [numero1, numero2, ...resto] = numerosEx4
+
+//console.log(numero1, numero2, resto)
+
+//Exercici 5
+const arrayEx5 = [10, 20, 30]
+
+const sumaSpread = (num1, num2, num3) => {
+    const resultado = num1 + num2 + num3
+    console.log(resultado)
+}
+
+//sumaSpread(...arrayEx5)
+
+//Exercici 6
+
+const persona = {
+    nombre: "Sergi",
+    Apellidos: "Descayre Solanas"
+}
+
+const domicilio = {
+    direccion: "la Canyera",
+    poblacion: "Llagostera"
+}
+
+const contacto = {
+    ...persona,
+    ...domicilio
+}
+
+//console.log(contacto)
+
+//Exercici 1.5
+
+//Exercici 1
+
+const arrayEx1 = [1, 2, 3, 4]
+
+const cuadrat = arrayEx1.map(num => num * num)
+//console.log(cuadrat)
+
+const parells = arrayEx1.filter(num => num % 2 === 0)
+//console.log(parells)
+
+const arrayEx3 = [1,10,8,11]
+
+const mayorDiez = arrayEx3.find(num => num > 10)
+//console.log(mayorDiez)
+
+const arrayEx5N = [13,7,8,21]
+const sumaReduce = arrayEx5N.reduce((a,b)=> a+b,0)
+//console.log(sumaReduce)
+
+//Exercici 6
+
+const arrayEx6N = [11,12,13,14]
+
+// console.log(arrayEx6N.some(numero => numero >10))
+// console.log(arrayEx6N.every(numero => numero >10))
+
+//Exercici 1.6
+
+//Exercici 1
+
+arrayForEach = ['anna','Bernat','Clara']
+
+//arrayForEach.forEach(nom=>console.log(nom))
+
+//Exercici 2
+
+for(let nom of arrayForEach){
+    console.log(nom)
+}
+
+//Exercici 3
+
+const arrayFilter = [1,2,3,4,5,6]
+
+const nombresParells = arrayFilter.filter(num => num % 2 === 0)
+
+//console.log(nombresParells)
+
+//Exercici 4
+
+let obj ={
+    nom:"Ona",
+    edat: 25,
+    ciutat: "Barcelona"
+}
+
+for(let value in obj){
+    console.log(`${value} : ${obj[value]}`)
+}
+
+//exercici 5
+
+let numerosBreak = [1,2,3,4,5,6]
+
+for(let numero of numerosBreak){
+    console.log(numero)
+    if(numero === 5) break
+}
+
+//exercici 6
+
+let noms = ['Anna', 'bernat' , 'Clara']
+
+for ( let [index , nom]  of noms.entries()){
+    console.log(`${nom} en posició ${index}`)
+}
