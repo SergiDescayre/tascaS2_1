@@ -23,7 +23,7 @@ class Person {
     }
 }
 const addGreet = new Person('Sergi', 'Descayre')
-//addGreet.greet()
+addGreet.greet()
 
 //Exercici 4
 
@@ -33,14 +33,14 @@ const printNumbers = (array) => {
         console.log(array[i])
     }
 }
-//printNumbers(numbers)
+printNumbers(numbers)
 
 const printWithDelay = (seconds) => {
     setTimeout(() => {
         console.log(`He esperat  ${seconds} segons`)
     }, seconds * 1000)
 }
-//printWithDelay(2)
+printWithDelay(2)
 
 //EXERCICI 1.2
 
@@ -49,14 +49,14 @@ const printWithDelay = (seconds) => {
 const potConduir = (edat) => {
     (edat >= 18) ? console.log("Pot Conduir") : console.log("No pot conduir")
 }
-//potConduir(15)
+potConduir(15)
 
 //Exercici 2
 
 const compararNumeros = (num1, num2) => {
     (num1 > num2) ? console.log(`${num1} es més gran`) : console.log(`${num2} es més gran`)
 }
-//compararNumeros(1,2)
+compararNumeros(1,2)
 
 //Exercici 3
 
@@ -65,14 +65,14 @@ const tipusDeNumero = (number) => {
         : number < 0 ? console.log("el número es negatiu") : console.log("El número es positiu")
 }
 
-//tipusDeNumero(0)
+tipusDeNumero(0)
 
 const trobarMaxim = (a, b, c) => {
     (a > b && a > c) ? console.log(a)
         : (b > a && b > c) ? console.log(b) : console.log(c)
 }
 
-//trobarMaxim(1,100,5)
+trobarMaxim(1,100,5)
 
 //Exercici 4
 
@@ -83,7 +83,7 @@ const parOImpar = (array) => {
         array[i] % 2 == 0 ? console.log(`${array[i]} es parell`) : console.log(`${array[i]} es imparell`)
 }
 
-//parOImpar(numeros)
+parOImpar(numeros)
 
 //EXERCICI 1.3
 
@@ -99,7 +99,7 @@ const processar = (nombre, callback) => {
 
 const calculadora = (a, b, callback) => callback(a + b)
 
-//calculadora(2, 9, (result) => console.log(result))
+calculadora(2, 9, (result) => console.log(result))
 
 //Exercici 3
 
@@ -108,7 +108,7 @@ const esperarISaludar = (nom, callback) => {
         callback(`Hola ${nom}`)
     }, 2000)
 }
-//esperarISaludar("Sergi", (saludo) => console.log(saludo))
+esperarISaludar("Sergi", (saludo) => console.log(saludo))
 
 //Exercici 4
 const numbersEx4 = [1, 2, 3]
@@ -123,7 +123,7 @@ const processarElements = (array, callback) => {
     callback(array)
 }
 
-//processarElements(numbersEx4, pintarCallbacks )
+processarElements(numbersEx4, pintarCallbacks )
 
 //Exercici 5
 
@@ -133,7 +133,7 @@ const passarMayuscula = (cadena) => {
 
 const processarCadena = (cadena, callback) => callback(cadena)
 
-//processarCadena("sergi", passarMayuscula)
+processarCadena("sergi", passarMayuscula)
 
 //EXERCICI 1.4
 
@@ -144,7 +144,7 @@ const array2 = [4, 5, 6]
 
 const array3 = [...array1, ...array2]
 
-//console.log(array3)
+console.log(array3)
 
 //Exercici 2
 
@@ -153,7 +153,7 @@ const suma = (...numeros) => {
     console.log(resultado)
 }
 
-//suma(...array1, ...array2, 1, 2, 3, 4, 5, 6)
+suma(...array1, ...array2, 1, 2, 3, 4, 5, 6)
 
 //Exercici 3
 
@@ -173,8 +173,8 @@ objecte3 = {
     poblacio: "Llagos"
 }
 
-//console.log(objecte3)
-//console.log(objecte2)
+console.log(objecte3)
+console.log(objecte2)
 
 //Exercici4
 
@@ -182,7 +182,7 @@ const numerosEx4 = [1, 2, 3, 4, 5, 6, 4]
 
 const [numero1, numero2, ...resto] = numerosEx4
 
-//console.log(numero1, numero2, resto)
+console.log(numero1, numero2, resto)
 
 //Exercici 5
 const arrayEx5 = [10, 20, 30]
@@ -192,7 +192,7 @@ const sumaSpread = (num1, num2, num3) => {
     console.log(resultado)
 }
 
-//sumaSpread(...arrayEx5)
+sumaSpread(...arrayEx5)
 
 //Exercici 6
 
@@ -211,7 +211,7 @@ const contacto = {
     ...domicilio
 }
 
-//console.log(contacto)
+console.log(contacto)
 
 //Exercici 1.5
 
@@ -220,26 +220,26 @@ const contacto = {
 const arrayEx1 = [1, 2, 3, 4]
 
 const cuadrat = arrayEx1.map(num => num * num)
-//console.log(cuadrat)
+console.log(cuadrat)
 
 const parells = arrayEx1.filter(num => num % 2 === 0)
-//console.log(parells)
+console.log(parells)
 
 const arrayEx3 = [1, 10, 8, 11]
 
 const mayorDiez = arrayEx3.find(num => num > 10)
-//console.log(mayorDiez)
+console.log(mayorDiez)
 
 const arrayEx5N = [13, 7, 8, 21]
 const sumaReduce = arrayEx5N.reduce((a, b) => a + b, 0)
-//console.log(sumaReduce)
+console.log(sumaReduce)
 
 //Exercici 6
 
 const arrayEx6N = [11, 12, 13, 14]
 
-// console.log(arrayEx6N.some(numero => numero >10))
-// console.log(arrayEx6N.every(numero => numero >10))
+console.log(arrayEx6N.some(numero => numero >10))
+console.log(arrayEx6N.every(numero => numero >10))
 
 //Exercici 1.6
 
@@ -247,7 +247,7 @@ const arrayEx6N = [11, 12, 13, 14]
 
 arrayForEach = ['anna', 'Bernat', 'Clara']
 
-//arrayForEach.forEach(nom=>console.log(nom))
+arrayForEach.forEach(nom=>console.log(nom))
 
 //Exercici 2
 
@@ -261,7 +261,7 @@ const arrayFilter = [1, 2, 3, 4, 5, 6]
 
 const nombresParells = arrayFilter.filter(num => num % 2 === 0)
 
-//console.log(nombresParells)
+console.log(nombresParells)
 
 //Exercici 4
 
@@ -301,7 +301,7 @@ const pintarDosSegons = () => {
         console.log('Hola mon')
     }, 2000);
 }
-//pintarDosSegons()
+pintarDosSegons()
 
 //Exercici 2
 
@@ -312,7 +312,7 @@ const promise = () => {
         }, 2000);
     })
 }
-//promise().then()
+promise().then()
 
 //Exercici 3
 
