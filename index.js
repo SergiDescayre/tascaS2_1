@@ -225,18 +225,18 @@ const cuadrat = arrayEx1.map(num => num * num)
 const parells = arrayEx1.filter(num => num % 2 === 0)
 //console.log(parells)
 
-const arrayEx3 = [1,10,8,11]
+const arrayEx3 = [1, 10, 8, 11]
 
 const mayorDiez = arrayEx3.find(num => num > 10)
 //console.log(mayorDiez)
 
-const arrayEx5N = [13,7,8,21]
-const sumaReduce = arrayEx5N.reduce((a,b)=> a+b,0)
+const arrayEx5N = [13, 7, 8, 21]
+const sumaReduce = arrayEx5N.reduce((a, b) => a + b, 0)
 //console.log(sumaReduce)
 
 //Exercici 6
 
-const arrayEx6N = [11,12,13,14]
+const arrayEx6N = [11, 12, 13, 14]
 
 // console.log(arrayEx6N.some(numero => numero >10))
 // console.log(arrayEx6N.every(numero => numero >10))
@@ -245,19 +245,19 @@ const arrayEx6N = [11,12,13,14]
 
 //Exercici 1
 
-arrayForEach = ['anna','Bernat','Clara']
+arrayForEach = ['anna', 'Bernat', 'Clara']
 
 //arrayForEach.forEach(nom=>console.log(nom))
 
 //Exercici 2
 
-for(let nom of arrayForEach){
+for (let nom of arrayForEach) {
     console.log(nom)
 }
 
 //Exercici 3
 
-const arrayFilter = [1,2,3,4,5,6]
+const arrayFilter = [1, 2, 3, 4, 5, 6]
 
 const nombresParells = arrayFilter.filter(num => num % 2 === 0)
 
@@ -265,29 +265,110 @@ const nombresParells = arrayFilter.filter(num => num % 2 === 0)
 
 //Exercici 4
 
-let obj ={
-    nom:"Ona",
+let obj = {
+    nom: "Ona",
     edat: 25,
     ciutat: "Barcelona"
 }
 
-for(let value in obj){
+for (let value in obj) {
     console.log(`${value} : ${obj[value]}`)
 }
 
 //exercici 5
 
-let numerosBreak = [1,2,3,4,5,6]
+let numerosBreak = [1, 2, 3, 4, 5, 6]
 
-for(let numero of numerosBreak){
+for (let numero of numerosBreak) {
     console.log(numero)
-    if(numero === 5) break
+    if (numero === 5) break
 }
 
 //exercici 6
 
-let noms = ['Anna', 'bernat' , 'Clara']
+let noms = ['Anna', 'bernat', 'Clara']
 
-for ( let [index , nom]  of noms.entries()){
+for (let [index, nom] of noms.entries()) {
     console.log(`${nom} en posició ${index}`)
 }
+
+
+//Exercici 1.7
+
+//Exercici 1
+const pintarDosSegons = () => {
+    setTimeout(() => {
+        console.log('Hola mon')
+    }, 2000);
+}
+//pintarDosSegons()
+
+//Exercici 2
+
+const promise = () => {
+    return new Promise(() => {
+        setTimeout(() => {
+            pintarDosSegons()
+        }, 2000);
+    })
+}
+//promise().then()
+
+//Exercici 3
+
+const inputPromise = () => {
+    const input = "hola"
+    return new Promise((resolve, reject) => {
+        if (input === "hola") {
+            resolve(input)
+        } else {
+            reject(new Error("input erroni"))
+        }
+    })
+}
+
+inputPromise().then(input => console.log(input))
+    .catch(error => console.log(error))
+
+//Exercici 4
+
+const promisEx4 = async () => {
+    const resposta = await pintarDosSegons()
+    return resposta
+}
+
+//promisEx4()
+
+//Exercici 5
+
+const promiseEx5 = async () => {
+    try {
+        const resposta = await pintarDosSegons()
+        return resposta
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//promiseEx5()
+
+//Exercici 6
+
+const promiseOne = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("resolt promiseOne")
+        }, 2000);
+    })
+}
+
+const promiseTwo = () => {
+    return new Promise((resolve) => {
+       setTimeout(() => {
+            resolve("resolt promiseTwo")
+       }, 3000); 
+    })
+}
+
+Promise.all([promiseOne(), promiseTwo()])
+.then(response => response.map(res => console.log(res)))
