@@ -157,17 +157,17 @@ suma(...array1, ...array2, 1, 2, 3, 4, 5, 6)
 
 //Exercici 3
 
-objecte1 = {
+const objecte1 = {
     nom: "Sergi",
     cognom: "Descayre"
 }
 
-objecte2 = {
+const objecte2 = {
     adreca: "gardenia 55",
     poblacio: "llagostera"
 }
 
-objecte3 = {
+const objecte3 = {
     ...objecte1,
     ...objecte2,
     poblacio: "Llagos"
